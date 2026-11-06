@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Diario de cuarentena, presentado como una conversación de WhatsApp." />
+    <title>Diario de cuarentena | WhatsApp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="topbar__identity">
+          <div class="avatar" aria-hidden="true">👑</div>
+          <div>
+            <h1>Diario de cuarentena 👑🦠</h1>
+            <p id="status">cargando conversación...</p>
+          </div>
+        </div>
+        <div class="topbar__actions" aria-label="Acciones del chat">
+          <button class="icon-button" id="search-toggle" type="button" aria-label="Buscar en el chat" title="Buscar">⌕</button>
+          <button class="icon-button" id="about-toggle" type="button" aria-label="Mostrar información" title="Información">⋮</button>
+        </div>
+      </header>
+
+      <section class="search-panel" id="search-panel" hidden>
+        <label for="search-input">Buscar en el diario</label>
+        <div class="search-row">
+          <input id="search-input" type="search" placeholder="Prueba con “diagnóstico” o “clases”" autocomplete="off" />
+          <span id="search-count" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="chat" id="chat" aria-label="Conversación del Diario de cuarentena">
+        <div class="loading">Abriendo el diario<span>...</span></div>
+      </section>
+
+      <button class="to-bottom" id="to-bottom" type="button" aria-label="Ir al final del chat" title="Ir al final">↓</button>
+      <footer class="composer">
+        <span class="composer__smile" aria-hidden="true">☺</span>
+        <span class="composer__placeholder">Este chat es un diario de solo lectura</span>
+        <span class="composer__mic" aria-hidden="true">⌁</span>
+      </footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
